@@ -19,9 +19,11 @@
   "homepage": "https://github.com/giacominimarco/next-level-week#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "node": "^14.4.0",
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "sqlite3": "^4.2.0"
   }
 }
