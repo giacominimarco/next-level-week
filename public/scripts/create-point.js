@@ -6,6 +6,7 @@ function populaUFs() {
         .then(states => {
             for( const state of states){   
                 ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
+                console.log(ufSelect) 
             }
         })
 }
@@ -13,8 +14,8 @@ function populaUFs() {
 populaUFs()
 
 function getCities(event){
-    const citySelect = document.querySelector("select[name=city]")
-    const stateInput = document.querySelector("input[name=state]")
+    const citySelect = document.querySelector("[name=city]")
+    const stateInput = document.querySelector("[name=state]")
     
     const ufValue = event.target.value
 
@@ -44,7 +45,6 @@ document
 
 
 // Itens de coleta, pegando todos os li
-
 const itemsToCollect = document.querySelectorAll(".items-grid li")
 
 for(const item of itemsToCollect){

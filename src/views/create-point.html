@@ -8,12 +8,13 @@
 
 {% block styles %}
     <link rel="stylesheet" href="/styles/create-point.css">
+    <link rel="stylesheet" href="/styles/modal.css">
 {% endblock styles %}
 
 {% block content %}
     {% include "partials/page-header.html" %}
 
-    <form action="">
+    <form action="/savepoint" method="POST">
         
         <h1>Cadastro do ponto de coleta</h1>
 
@@ -59,6 +60,8 @@
                     <select name="city" disabled required>
                         <option value="">Selecione a Cidade</option>
                     </select>
+
+                    {# <input type="hidden" name="state"> #}
                 </div>
             </div>
         </fieldset>
@@ -100,9 +103,16 @@
         </fieldset>
 
         <button type="submit">Cadastrar ponto de coleta</button>
-    </form>
+    </form>  
+
 {% endblock content %}
 
+{% block modal %}
+    {% if saved %}
+        {% include "partials/point-created.html" %}
+    {% endif %}  
+{% endblock modal %}
+
 {% block scripts %}
-    <script src="/scripts/index.js"></script>
+    <script src="/scripts/create-point.js"></script>
 {% endblock scripts %}
