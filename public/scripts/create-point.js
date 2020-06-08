@@ -31,13 +31,12 @@ function getCities(event){
         .then(res => res.json()) //função anonima que esta retornando um valor
         .then(cities => {
             for( const city of cities){   
-                citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
+                citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
             }
 
             citySelect.disabled = false
         })
 }
-
 
 document
     .querySelector("select[name=uf]")
